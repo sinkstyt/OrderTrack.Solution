@@ -27,7 +27,7 @@ namespace OrderTrack
     {
       app.UseRouting();
 
-      app.UseEnpoints(routes =>
+      app.UseEndpoints(routes =>
       {
         routes.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
       });
