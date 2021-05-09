@@ -1,6 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OrderTrack.Models;
 using System;
+using System.Collections.Generic;
 
 namespace OrderTrack.Tests
 {
@@ -39,6 +40,14 @@ namespace OrderTrack.Tests
       Assert.AreEqual(description, resultDescription);
     }
 
-    
+    [TestMethod]
+    public void VendorConstructor_InstanceHasEmptyListOfOrders_EmptyListOfOrders()
+    {
+      string firstName = "Cyd";
+      Vendor fourthBuyer = new Vendor(firstName);
+      List<Order> expectedList = new List<Order> {};
+      List<Order> resultList = fourthBuyer.Orders;
+      CollectionAssert.AreEqual(expectedList, resultList);
+    }
   }
 }

@@ -6,6 +6,7 @@ namespace OrderTrack.Models
   {
     public string Name { get; set; }
     public string Description { get; set; }
+    public List<Order> Orders { get; set; }
     public int Id { get; }
     
     private static List<Vendor> _allVendors = new List<Vendor>{};
@@ -13,7 +14,7 @@ namespace OrderTrack.Models
     public Vendor(string name)
     {
       Name = name;
-      List<Order> Orders = new List<Order> {};
+      // List<Order> Orders = new List<Order> {};
       _allVendors.Add(this);
       int Id = _allVendors.Count;
     }
