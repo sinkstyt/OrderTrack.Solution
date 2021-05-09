@@ -16,7 +16,6 @@ namespace OrderTrack.Models
       List<Order> Orders = new List<Order> {};
       _allVendors.Add(this);
       int Id = _allVendors.Count;
-      Name = "Blaine";
     }
   } 
 }
