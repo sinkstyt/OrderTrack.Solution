@@ -12,10 +12,11 @@ namespace OrderTrack.Models
     
     public Vendor(string name)
     {
-      string Name = name;
+      Name = name;
       List<Order> Orders = new List<Order> {};
       _allVendors.Add(this);
       int Id = _allVendors.Count;
+      Name = "Blaine";
     }
   } 
 }
