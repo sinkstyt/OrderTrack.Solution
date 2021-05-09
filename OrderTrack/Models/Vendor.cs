@@ -17,5 +17,10 @@ namespace OrderTrack.Models
       _allVendors.Add(this);
       int Id = _allVendors.Count;
     }
+
+    public static void ClearAll()
+    {
+      _allVendors.Clear();
+    }
   } 
 }
