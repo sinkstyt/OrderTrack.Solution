@@ -25,6 +25,8 @@ namespace OrderTrack
 
     public void Configure(IApplicationBuilder app)
     {
+      app.UseDeveloperExceptionPage();
+      
       app.UseRouting();
 
       app.UseEndpoints(routes =>
@@ -34,7 +36,7 @@ namespace OrderTrack
 
       app.Run(async (context) =>
       {
-        await context.Response.WriteAsync("This much I know is true.");
+        await context.Response.WriteAsync("It is likely you ended up here by accident");
       });
     }
   }
