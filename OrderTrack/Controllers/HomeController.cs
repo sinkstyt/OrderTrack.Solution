@@ -10,5 +10,11 @@ namespace OrderTrack.Controllers
     {
       return View();
     }
+
+    [HttpGet("/enter-vendor")]
+    public ActionResult EnterVendor()
+    {
+      return View();
+    }
   }
 }
