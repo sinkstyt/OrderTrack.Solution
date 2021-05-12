@@ -10,8 +10,10 @@ namespace OrderTrack.Tests
   {
     public void Dispose()
     {
+      Vendor.ClearAllOrders();
       Vendor.ClearAll();
     }
+
     [TestMethod]
     public void VendorConstructor_ReturnsAnInstanceWhoseTypeIsVendor_Vendor()
     {
@@ -46,7 +48,7 @@ namespace OrderTrack.Tests
       string firstName = "Cyd";
       Vendor fourthBuyer = new Vendor(firstName);
       List<Order> expectedList = new List<Order> {};
-      List<Order> resultList = fourthBuyer.Orders;
+      List<Order> resultList = fourthBuyer.GetOrdersThisVendor();
       CollectionAssert.AreEqual(expectedList, resultList);
     }
   }
