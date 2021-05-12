@@ -15,12 +15,11 @@ namespace OrderTrack.Models
 
     private static List<Order> _allOrders = new List<Order> {};
   
-    public Order()
+    public Order(string title, string description, DateTime date)
     {
-      // string Title = title;
-      // string Description = description;
-      // DateTime Date = date;
-      
+      string Title = title;
+      string Description = description;
+      DateTime Date = date;
     }
   }
 }
