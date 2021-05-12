@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OrderTrack.Models;
+using System;
 
 namespace OrderTrack.Tests
 {
@@ -9,7 +10,10 @@ namespace OrderTrack.Tests
     [TestMethod]
     public void OrderMethodAtStake_BehaviorExpectedOfCallToMethod_ExpectedReturn()
     {
-      Order firstOrder = new Order();
+      string title = "big order";
+      string description = "three baguettes on Monday";
+      DateTime date = DateTime.Now;
+      Order firstOrder = new Order(title, description, date);
       Assert.AreEqual(typeof(Order), firstOrder.GetType());
     }
   }
