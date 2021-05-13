@@ -6,17 +6,22 @@ namespace OrderTrack.Models
   {
     public string Name { get; set; }
     public string Description { get; set; }
-    public List<Order> Orders { get; }
-    public int Id { get; }
-    
+    public List<Order> Orders { get; set; }
     private static List<Vendor> _allVendors = new List<Vendor>{};
+    public int VendorId { get; }
+    
     
     public Vendor(string name)
     {
       Name = name;
-      List<Order> Orders = new List<Order> {};
+      Orders = new List<Order> {};
       _allVendors.Add(this);
-      int Id = _allVendors.Count;
+      int VendorId = _allVendors.Count;
+    }
+
+    public static List<Vendor> GetAllVendors()
+    {
+      return _allVendors;
     }
 
     public List<Order> GetOrdersThisVendor()
@@ -34,9 +39,14 @@ namespace OrderTrack.Models
       Orders.Clear();
     }
 
-    public static void ClearAll()
+    public static void ClearAllVendors()
     {
       _allVendors.Clear();
+    }
+
+    public static Vendor Find(int findId)
+    {
+      return _allVendors [ findId - 1 ];
     }
   } 
 }
