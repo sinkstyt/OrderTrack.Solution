@@ -1,0 +1,20 @@
+@using OrderTrack.Models;
+
+<h1>Vendors Page</h1>
+
+<h2>List of All Vendors</h2>
+@if (Model.Count == 0)
+{
+  <h3>No vendors to display</h3>
+}
+<p>click a vendor's name to see their orders</p>
+
+<ul>
+  @foreach (Vendor vendor in Model)
+  {
+    <li><a href='vendors/@vendor.VendorId'>@vendor.Name : @(vendor.Description)</a></li>
+  }
+</ul>
+
+<a href='/vendors/new'>add a vendor</a>
+<a href='/'>Home</a>

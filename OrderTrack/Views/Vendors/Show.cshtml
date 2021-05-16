@@ -1,0 +1,15 @@
+@using OrderTrack.Models;
+
+<h1>Vendor: @Model["vendor"].Name</h1>
+<h3>Orders by this vendor</h3>
+
+<ul>
+@foreach (Order order in @Model["orders"])
+{
+  <li><a href='/vendors/@Model["vendor"].VendorId/orders/@order.Id'>@order.Title : @order.Description : @order.OrderPrice : @order.Date</a></li>
+}
+</ul>
+
+<p><a href='/vendors/@Model["vendor"].VendorId/orders/new'>Add order for this vendor</a></p>
+<p><a href='/vendors'>all vendors page</a></p>
+<p><a href='/'>Home</a></p>
