@@ -12,7 +12,9 @@ namespace OrderTrack.Controllers
     {
       Vendor vendor = Vendor.Find(vendorId);
       List<Order> _allOrders = Order.GetAllOrders();
-      Dictionary<string, object> model = new Dictionary<string, object> {"vendor", };
+      Dictionary<string, object> model = new Dictionary<string, object> { };
+      model.Add("vendor", vendor);
+      model.Add("orders", _allOrders);
       return View();
     }
 
