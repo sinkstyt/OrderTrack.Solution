@@ -10,8 +10,7 @@ namespace OrderTrack.Tests
   {
     public void Dispose()
     {
-      // Vendor.ClearAllOrders();
-      Vendor.ClearAll();
+      Vendor.ClearAllVendors();
     }
 
     [TestMethod]
