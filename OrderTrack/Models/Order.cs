@@ -11,7 +11,7 @@ namespace OrderTrack.Models
     public int BaguettePrice = 4;
     public int CroissantPrice = 2;
     public int Id { get; }
-    public int OrderPrice { get; set }
+    public int OrderPrice { get; set; }
 
     private static List<Order> _allOrders = new List<Order> {};
   
