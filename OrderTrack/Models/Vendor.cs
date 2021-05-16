@@ -16,7 +16,7 @@ namespace OrderTrack.Models
       Name = name;
       Orders = new List<Order> {};
       _allVendors.Add(this);
-      int VendorId = _allVendors.Count;
+      VendorId = _allVendors.Count;
     }
 
     public static List<Vendor> GetAllVendors()
@@ -46,7 +46,7 @@ namespace OrderTrack.Models
 
     public static Vendor Find(int findId)
     {
-      return _allVendors [ findId - 1 ];
+      return _allVendors[ findId - 1];
     }
   } 
 }

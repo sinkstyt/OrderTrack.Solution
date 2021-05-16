@@ -3,7 +3,8 @@
   <h2>For @Model.Name</h2>
   <p>Not the right vendor for this new order? <a href="/vendors">Go back to Vendor Page</a></p>
   
-  <form action="/orders" method="post">
+  <form action="/vendors/@Model.VendorId/orders" method="post">
+    <input id="vendorId" name="vendorId" type="hidden" value="@Model.VendorId">    
     <div>
       <label for="order-title">Title for this order</label>
       <input id="order-title" name="Title" type="text" required>

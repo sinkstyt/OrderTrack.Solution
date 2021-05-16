@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using OrderTrack.Models;
+using System;
 
 namespace OrderTrack.Controllers
 {
@@ -14,7 +15,7 @@ namespace OrderTrack.Controllers
     }
 
     [HttpGet("/vendors/new")]
-    public ActionResult CreateVendor()
+    public ActionResult New()
     {
       return View();
     }
@@ -36,6 +37,20 @@ namespace OrderTrack.Controllers
       model.Add("vendor", thisVendor);
       model.Add("orders", ordersByVendor);
       return View(model);
+    }
+
+    [HttpPost("/vendors/{vendorId}/orders")]
+    public ActionResult Create(int vendorId, string title, string description, string baguettes, string croissants)
+    {
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Vendor thisVendor = Vendor.Find(vendorId);
+      DateTime date = DateTime.Now;
+      Order newOrder = new Order(title, description, date);
+      thisVendor.AddOrder(newOrder);
+      List<Order> ordersByVendor = thisVendor.GetOrdersThisVendor();
+      model.Add("orders", ordersByVendor);
+      model.Add("category", thisVendor);
+      return View("Index", model);
     }
   }
 }

@@ -7,7 +7,7 @@ namespace OrderTrack.Controllers
 {
   public class OrdersController : Controller
   {
-    [HttpGet("/orders")]
+    [HttpGet("vendors/{vendorId}/orders")]
     public ActionResult Index(int vendorId)
     {
       Vendor vendor = Vendor.Find(vendorId);
@@ -15,17 +15,17 @@ namespace OrderTrack.Controllers
       Dictionary<string, object> model = new Dictionary<string, object> { };
       model.Add("vendor", vendor);
       model.Add("orders", _allOrders);
-      return View();
+      return View(model);
     }
 
-    [HttpGet("/orders/new")]
-    public ActionResult CreateOrder(int vendorId)
+    [HttpGet("/vendors/{vendorId}/orders/new")]
+    public ActionResult New(int vendorId)
     {
       Vendor model = Vendor.Find(vendorId);
       return View(model);
     }
 
-    [HttpPost("/orders")]
+    [HttpPost("vendors/{vendorId}/orders")]
     public ActionResult CreateOrder(string title, string description, string baguettes, string croissants, Vendor vendor)
     {
       DateTime date = DateTime.Now;

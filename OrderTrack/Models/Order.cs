@@ -29,6 +29,15 @@ namespace OrderTrack.Models
       return _allOrders;
     }
 
+    public static void ClearAll()
+    {
+      _allOrders.Clear();
+    }
+    public static Order Find(int id)
+    {
+      return _allOrders[ id - 1 ];
+    }
+
     public void CalcPrice(string baguetteCount, string croissantCount)
     {
       int bagPrice = Convert.ToInt32(baguetteCount) * BaguettePrice;
