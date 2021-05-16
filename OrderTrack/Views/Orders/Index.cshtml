@@ -1,0 +1,13 @@
+<h1>All Orders Page</h1>
+
+if (@Model.Count == 0 )
+{
+  <h2>No orders entered for this vendor</h2>
+}
+
+<ul orders-by-vendor>
+foreach(Order order in model)
+{
+  <li>@Model.Title : @Model.Description : @Model.Date</li>
+}
+</ul>

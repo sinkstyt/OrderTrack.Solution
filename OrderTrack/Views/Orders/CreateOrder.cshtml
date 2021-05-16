@@ -1,0 +1,25 @@
+<body class="container">
+  <h1 class="form-title">Enter New Order</h1>
+  <h2>For @Model.Name</h2>
+  <p>Not the right vendor for this new order? <a href="/vendors">Go back to Vendor Page</a></p>
+  
+  <form action="/orders" method="post">
+    <div>
+      <label for="order-title">Title for this order</label>
+      <input id="order-title" name="Title" type="text" required>
+    </div>
+    <div>
+      <label for="Description">Description</label>
+      <input id="Description" name="Description" type="text">
+    </div>
+    <div>
+      <label for="baguettes-order">Baguettes</label>
+      <input id="baguettes-order" name="Baguettes" type="number">
+    </div>
+    <div>
+      <label for="croissant-order">Croissants</label>
+      <input id="croissant-order" name="Croissants" type="number">
+    </div>
+    <button type="submit">Add Order</button>
+  </form>
+</body>
